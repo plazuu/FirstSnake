@@ -8,4 +8,7 @@ class InputControl{
             return false;
         }
     }
+    public char getMovment(){
+        return scan.next().charAt(0);
+    }
 }
