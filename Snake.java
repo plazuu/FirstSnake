@@ -7,17 +7,35 @@ class Snake{
         x = length/2;
         y = hight/2;
     }
+    public int getSnakeX(){
+        return x;
+    }
+    public int getSnakeY(){
+        return y;
+    }
+
     public void setSnakeDirection(char direction){
         switch (direction){
             case 'w':
-                y++;
+                y--;
+                break;
             case 'a':
                 x--;
+                break;
             case 's':
-                y--;
+                y++;
+                break;
             case 'd':
                 x++;
+                break;
         }
-        System.out.print("x pos" + x + " " + "y pos" + y);
     }
+    public boolean isSnakeAlive(int length, int hight){
+        if((0 <= x && x < length) && (0 <= y && y < hight)){
+            return true;
+        } else{
+            return false;
+        }
+    }
+
 }

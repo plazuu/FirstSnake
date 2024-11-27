@@ -10,12 +10,13 @@ class Game{
             playing = in.getStart();
          }
         System.out.println("welcome to snake");
-        Board.setBoardSize(25,7);
-        snake.setSnakeCenter(25,7);
+        Board.setBoardSize(25,8);
+        snake.setSnakeCenter(25,8);
         while(playing){
-            Board.createBoard(); 
+            Board.createBoard(snake.getSnakeX(), snake.getSnakeY()); 
             snake.setSnakeDirection(in.getMovment());
-            
+            playing = snake.isSnakeAlive(25, 8);
         }
+        System.out.print("you died");
     }
 }
