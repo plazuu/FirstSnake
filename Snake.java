@@ -1,7 +1,10 @@
+import java.util.ArrayList;
 class Snake{
-    private int Bodylength = 1;
+    private int bodylength = 1;
     private int x;
     private int y;
+    private ArrayList<Integer> bodyX = new ArrayList<>();
+    private ArrayList<Integer> bodyY = new ArrayList<>();
 
     public void setSnakeCenter(int length,int hight){
         x = length/2;
@@ -12,6 +15,10 @@ class Snake{
     }
     public int getSnakeY(){
         return y;
+    }
+    public void setBodyLength(){
+        bodylength++;
+
     }
 
     public void setSnakeDirection(char direction){

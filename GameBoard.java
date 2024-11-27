@@ -3,7 +3,6 @@ class GameBoard{
     private int hight;
     Apple apple = new Apple();
 
-
     public void setBoardSize (int givenlength, int givenhight){
         length = givenlength;
         hight = givenhight;

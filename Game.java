@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.Random;
+
 class Game{
     public static final int BOARD_LENGTH = 25;
     public static final int BOARD_HIGHT = 8;
