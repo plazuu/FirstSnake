@@ -1,5 +1,8 @@
 import java.util.Scanner;
+import java.util.Random;
 class Game{
+    public static final int BOARD_LENGTH = 25;
+    public static final int BOARD_HIGHT = 8;
     public static void main(String[] args){
         boolean playing = false;
         InputControl in = new InputControl();
@@ -10,12 +13,12 @@ class Game{
             playing = in.getStart();
          }
         System.out.println("welcome to snake");
-        Board.setBoardSize(25,8);
-        snake.setSnakeCenter(25,8);
+        Board.setBoardSize(BOARD_LENGTH,BOARD_HIGHT);
+        snake.setSnakeCenter(BOARD_LENGTH,BOARD_HIGHT);
         while(playing){
             Board.createBoard(snake.getSnakeX(), snake.getSnakeY()); 
             snake.setSnakeDirection(in.getMovment());
-            playing = snake.isSnakeAlive(25, 8);
+            playing = snake.isSnakeAlive(BOARD_LENGTH, BOARD_HIGHT);
         }
         System.out.print("you died");
     }
