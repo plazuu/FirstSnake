@@ -20,8 +20,9 @@ class Game{
         while(playing){
             Board.createBoard(snake.bodyX, snake.bodyY); 
             snake.setSnakeDirection(in.getMovment());
-            playing = snake.isSnakeAlive(BOARD_LENGTH, BOARD_HIGHT);
+            playing = snake.isSnakeAlive(BOARD_LENGTH, BOARD_HIGHT, snake.snakeOverLap());
         }
-        System.out.print("you died");
+        System.out.println("you died");
+        System.out.print("score : " + (snake.getBodyLength() - 2));
     }
 }

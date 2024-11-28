@@ -22,6 +22,22 @@ class GameBoard{
                 boolean isSnake = false;
                 if(snakeX.contains(j) && snakeY.contains(i)){
                     for(int k = 0; k < snakeX.size(); k++){
+                        if(snakeX.get(k) == apple.getAppleX() && snakeY.get(k) == apple.getAppleY()){
+                            boolean appleOverLap = true;
+                            while(appleOverLap){
+                                apple.setAppleLocation(length, hight);
+                                boolean newPos = true;
+                                for(int g = 0; g < snakeX.size(); g++){
+                                    if(snakeX.get(g) == apple.getAppleX() && snakeY.get(g) == apple.getAppleY()){ 
+                                        newPos = false;
+                                        break;
+                                    }  
+                                }
+                                if(newPos){
+                                    appleOverLap = false;
+                                }
+                            }
+                        }
                         if(snakeX.get(k) == j && snakeY.get(k) == i){
                             if(k == 0){
                                 System.out.print("@");

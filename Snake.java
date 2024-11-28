@@ -22,7 +22,7 @@ class Snake{
         bodylength++;
     }
     public int getBodyLength(){
-        return bodylength;
+        return bodyY.size();
     }
 
     public void setSnakeDirection(char direction){
@@ -49,12 +49,19 @@ class Snake{
                 break;
         }
     }
-    public boolean isSnakeAlive(int length, int hight){
-        if((0 <= x && x < length) && (0 <= y && y < hight)){
+    public boolean isSnakeAlive(int length, int hight, boolean overLap){
+        if(((0 <= x && x < length) && (0 <= y && y < hight)) && !overLap){
             return true;
         } else{
             return false;
         }
     }
-
+    public boolean snakeOverLap(){
+        for(int i = 1; i < bodyX.size(); i++){
+            if((bodyX.get(0) == bodyX.get(i)) && (bodyY.get(0) == bodyY.get(i))){
+                return true;
+            }
+        }
+        return false;
+    }
 }
