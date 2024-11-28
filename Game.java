@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.Random;
+import java.util.ArrayList;
 
 class Game{
     public static final int BOARD_LENGTH = 25;
@@ -17,7 +18,7 @@ class Game{
         Board.setBoardSize(BOARD_LENGTH,BOARD_HIGHT);
         snake.setSnakeCenter(BOARD_LENGTH,BOARD_HIGHT);
         while(playing){
-            Board.createBoard(snake.getSnakeX(), snake.getSnakeY()); 
+            Board.createBoard(snake.bodyX, snake.bodyY); 
             snake.setSnakeDirection(in.getMovment());
             playing = snake.isSnakeAlive(BOARD_LENGTH, BOARD_HIGHT);
         }

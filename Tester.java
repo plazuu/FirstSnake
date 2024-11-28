@@ -7,5 +7,6 @@ class Tester{
         Apple app = new Apple();
         app.setAppleLocation(25,7);
         System.out.print(app.getAppleX());
+       
     }
 }
