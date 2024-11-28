@@ -19,6 +19,7 @@ class GameBoard{
         }
         for(int i = 0; i < hight; i++){
             for(int j = 0; j < length; j++){
+                boolean isSnake = false;
                 if(snakeX.contains(j) && snakeY.contains(i)){
                     for(int k = 0; k < snakeX.size(); k++){
                         if(snakeX.get(k) == j && snakeY.get(k) == i){
@@ -27,12 +28,18 @@ class GameBoard{
                             } else{
                               System.out.print("0");  
                             }
+                            isSnake = true;
+                            break;
+                            
                         }
                     }
-                }else if (apple.getAppleX() == j && apple.getAppleY() == i){
-                    System.out.print("*");
-                } else {
-                    System.out.print("-");
+                }
+                if (!isSnake){
+                    if (apple.getAppleX() == j && apple.getAppleY() == i){
+                        System.out.print("*");
+                    } else {
+                        System.out.print("-");
+                    }
                 }
             }
             System.out.println();
